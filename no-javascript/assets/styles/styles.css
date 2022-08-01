@@ -535,8 +535,8 @@ body {
 }
 
 .pokemon-display {
-  background: orange url('../images/game_display_background.jpg') no-repeat center
-    fixed;
+  background: orange url('../images/game_display_background.jpg') no-repeat
+    center fixed;
   background-size: cover;
   border-radius: 10px;
 
@@ -573,10 +573,10 @@ body {
   }
 
   .colored-buttons-piece > .black-bars {
-    transform: translateY(85%) rotate(10deg);
+    transform: translateY(95%) rotate(10deg);
     left: 37%;
   }
-  
+
   .colored-buttons-piece > .black-bars > .black-bar:nth-child(4) {
     height: 90%;
   }
@@ -586,29 +586,29 @@ body {
   }
 
   .colored-buttons-container .white-container {
-    height: 70px;
-    width: 72px;
+    height: 80px;
+    width: 82px;
   }
 
   .coloredBtn.red-container {
-    left: 29%;
+    left: 26%;
   }
 
   .coloredBtn.yellow-container {
-    left: 38%;
+    left: 35%;
   }
 
   .coloredBtn.green-container {
-    left: 47%;
+    left: 44%;
   }
 
   .display-container::before {
     background-image: linear-gradient(
-    45deg,
-    #000 42%,
-    var(--display-container-background-color) 40%,
-    #000 80%
-  );
+      45deg,
+      #000 42%,
+      var(--display-container-background-color) 40%,
+      #000 80%
+    );
     border-radius: 10px;
   }
 }
