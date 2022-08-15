@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon_v2.ico"
+      type="image/x-icon"
+    />
+    <title>Modern Pokédex</title>
+  </head>
+  <body>
+    <div class="sky">
+      <div class="stars"></div>
+    </div>
+    <div class="base border border-radius">
+      <div class="black-bars">
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+        <div class="black-bar"></div>
+      </div>
+      <div class="layer2 border border-radius">
+        <div class="colored-buttons-container">
+          <div class="white-container border circle">
+            <div class="cyan-container border circle">
+              <div class="bondiblue-container circle"></div>
+              <div class="small-cyan-container cyan-container circle">
+                <div class="lightblue-container circle"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coloredBtn red-container border circle">
+            <div class="lightred-container circle light-circle"></div>
+            <div class="darkred-container circle dark-circle"></div>
+          </div>
+          <div class="coloredBtn yellow-container border circle">
+            <div class="lightyellow-container circle light-circle"></div>
+            <div class="darkyellow-container circle dark-circle"></div>
+          </div>
+          <div class="coloredBtn green-container border circle">
+            <div class="lightgreen-container circle light-circle"></div>
+            <div class="darkgreen-container circle dark-circle"></div>
+          </div>
+
+          <div class="red-triangle"></div>
+          <div class="border-bottom"></div>
+
+          <div class="colored-buttons-piece">
+            <div class="black-bars">
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+              <div class="black-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="layer3 border">
+          <div class="display-container border">
+            <div class="display-frame border">
+              <div class="screws">
+                <div class="screw border"></div>
+                <div class="screw border"></div>
+              </div>
+
+              <div class="pokemon-display border">
+                <img class="pokemon__image" src="" alt="Pokémon" />
+              </div>
+
+              <h1 class="pokemon__data">
+                <span class="pokemon__number"></span> -
+                <span class="pokemon__name" id="pokemonNameSpan"></span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- Inputs here -->
+          <div class="pokedexInfoContainer">
+            <form id="search_show_PokemonInfo" autocomplete="off">
+              <div class="pokeSearchInfo-container">
+                <input
+                  type="search"
+                  id="inputPokemonName"
+                  placeholder="Name / ID"
+                  spellcheck="false"
+                />
+
+                <div class="arrow-buttons">
+                  <button
+                    type="button"
+                    class="arrow-button border-radius"
+                    id="leftArrBtn"
+                  >
+                    L
+                  </button>
+                  <button
+                    type="button"
+                    class="arrow-button border-radius"
+                    id="rightArrBtn"
+                  >
+                    R
+                  </button>
+                </div>
+              </div>
+
+              <div class="pokeResults-display border">
+                <h2>Type: <span id="type"></span>
+                </h2>
+
+                <h2 class="stat">HP: <span class="stat-result" id="hp"></span>
+                </h2>
+
+                <h2 class="stat">Attack: <span class="stat-result" id="attack"></span>
+                </h2>
+
+                <h2 class="stat">Defense: <span class="stat-result" id="defense"></span>
+                </h2>
+
+                <h2 class="stat">
+                  Special-Attack: <span class="stat-result" id="special-attack"></span>
+                </h2>
+
+                <h2 class="stat">
+                  Special-Defense: <span class="stat-result" id="special-defense"></span>
+                </h2>
+
+                <h2 class="stat">Speed: <span class="stat-result" id="speed"></span>
+                </h2>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="flip-container border">
+        <div class="shade1"></div>
+        <div class="flip-divider" id="dividerOne">
+          <div class="flip-divider-mark left-mark"></div>
+          <div class="flip-divider-mark right-mark"></div>
+        </div>
+        <div class="flip-divider" id="dividerTwo">
+          <div class="flip-divider-mark left-mark"></div>
+          <div class="flip-divider-mark right-mark"></div>
+        </div>
+        <div class="flip-bottom border"></div>
+      </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
