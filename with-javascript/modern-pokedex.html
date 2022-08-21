@@ -27,8 +27,8 @@
         <div class="black-bar"></div>
       </div>
       <div class="layer2 border border-radius">
-        <div class="colored-buttons-container">
-          <div class="white-container border circle">
+        <div class="colored-buttons-container" id="coloredBtnsContainer">
+          <div class="white-container flashyButton border circle">
             <div class="cyan-container border circle">
               <div class="bondiblue-container circle"></div>
               <div class="small-cyan-container cyan-container circle">
@@ -37,15 +37,15 @@
             </div>
           </div>
 
-          <div class="coloredBtn red-container border circle">
+          <div class="coloredBtn flashyButton red-container border circle">
             <div class="lightred-container circle light-circle"></div>
             <div class="darkred-container circle dark-circle"></div>
           </div>
-          <div class="coloredBtn yellow-container border circle">
+          <div class="coloredBtn flashyButton yellow-container border circle">
             <div class="lightyellow-container circle light-circle"></div>
             <div class="darkyellow-container circle dark-circle"></div>
           </div>
-          <div class="coloredBtn green-container border circle">
+          <div class="coloredBtn flashyButton green-container border circle">
             <div class="lightgreen-container circle light-circle"></div>
             <div class="darkgreen-container circle dark-circle"></div>
           </div>
@@ -66,7 +66,15 @@
           </div>
         </div>
 
-        <div class="layer3 border">
+        <div class="layer3 pokedexOff border">
+          <div class="powerButtonContainer border">
+            <img
+              id="powerBtn"
+              src="assets/icons/power-icon.svg"
+              alt="Power Button"
+            />
+          </div>
+
           <div class="display-container border">
             <div class="display-frame border">
               <div class="screws">
@@ -74,9 +82,7 @@
                 <div class="screw border"></div>
               </div>
 
-              <div class="pokemon-display border">
-                <img class="pokemon__image" src="" alt="Pokémon" />
-              </div>
+              <div class="pokemon-display border"></div>
 
               <h1 class="pokemon__data">
                 <span class="pokemon__number"></span> -
@@ -115,27 +121,38 @@
               </div>
 
               <div class="pokeResults-display border">
-                <h2>Type: <span id="type"></span>
-                </h2>
-
-                <h2 class="stat">HP: <span class="stat-result" id="hp"></span>
-                </h2>
-
-                <h2 class="stat">Attack: <span class="stat-result" id="attack"></span>
-                </h2>
-
-                <h2 class="stat">Defense: <span class="stat-result" id="defense"></span>
+                <h2>
+                  <span class="pokeDataName"></span> <span id="type"></span>
                 </h2>
 
                 <h2 class="stat">
-                  Special-Attack: <span class="stat-result" id="special-attack"></span>
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="hp"></span>
                 </h2>
 
                 <h2 class="stat">
-                  Special-Defense: <span class="stat-result" id="special-defense"></span>
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="attack"></span>
                 </h2>
 
-                <h2 class="stat">Speed: <span class="stat-result" id="speed"></span>
+                <h2 class="stat">
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="defense"></span>
+                </h2>
+
+                <h2 class="stat">
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="special-attack"></span>
+                </h2>
+
+                <h2 class="stat">
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="special-defense"></span>
+                </h2>
+
+                <h2 class="stat">
+                  <span class="pokeDataName"></span>
+                  <span class="stat-result" id="speed"></span>
                 </h2>
               </div>
             </form>

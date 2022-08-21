@@ -8,6 +8,11 @@
 }
 
 :root {
+  /* sky */
+  --sky-background-color: #4b79a1;
+  --sky-lineargradient-firstcolor: #283e51;
+  --sky-lineargradient-secondcolor: #0a2342;
+
   --base-background-color: #8e062a;
   --main-background-color: #d30a40;
   --pokedex-shade1: #d83760;
@@ -25,7 +30,7 @@
   --darkyellow-color: #a28c11;
   --yellow-color: #f3dd51;
   --darkgreen-color: #6ea838;
-  --green-color: #a8ef4b;
+  --green-color: #2bff00;
 
   --path: 0 0, 100% 0, 100% 20%, 100% 100%, 80% 100%, 16% 100%, 0% 80%, 0% 20%;
 }
@@ -46,10 +51,13 @@ body {
 .sky {
   position: absolute;
   width: 100%;
-  background: #4b79a1;
-  background: -webkit-linear-gradient(to top, #283e51, #0a2342);
-  background: linear-gradient(to top, #283e51, #0a2342);
-  background: -olinear-gradient(to top, #283e51, #0a2342);
+
+  background: var(--sky-background-color);
+
+  background: -webkit-linear-gradient(to top, var(--sky-lineargradient-firstcolor), var(--sky-lineargradient-secondcolor));
+
+  background: linear-gradient(to top, var(--sky-lineargradient-firstcolor), var(--sky-lineargradient-secondcolor));
+  
   height: 100vh;
 }
 
@@ -68,6 +76,15 @@ body {
 }
 
 /* HELPFUL CLASSES */
+.pokedexOff {
+  opacity: .6;
+}
+
+.layer3 {
+  pointer-events: none;
+}
+
+/* experimente tirar as classes circle e border-radius! */
 .circle {
   border-radius: 50%;
 }
@@ -169,6 +186,121 @@ body {
   right: 35%;
   bottom: -112%;
   transform: rotate(-40deg);
+}
+
+/* Pokedex Opacity Animation */
+@keyframes increaseOpacity {
+  0% {
+    opacity: .5;
+  }
+  25% {
+    opacity: .6;
+  }
+  50% {
+    opacity: .75;
+  }
+  75% {
+    opacity: .8;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+.pokedexOpacityAnimation {
+  animation: increaseOpacity 2s;
+}
+
+/* Buttons Animations */
+@keyframes cyanButtonOn {
+  0% {
+    background-color: var(--lightblue-color);
+  }
+  50% {
+    background-color: var(--bondiblue-color);
+  }
+  75% {
+    background-color: var(--lightblue-color);
+  }
+  100% {
+    background-color: var(--bondiblue-color);
+  }
+}
+
+.cyanButtonAnimation {
+  animation: cyanButtonOn 1.5s;
+}
+
+@keyframes redButtonOn {
+  0% {
+    background-color: var(--darkred-color);
+  }
+  25% {
+    background-color: var(--red-color);
+  }
+  50% {
+    background-color: var(--darkred-color);
+  }
+  75% {
+    background-color: var(--base-background-color);
+  }
+  100% {
+    background-color: var(--red-color);
+  }
+}
+
+.redButtonAnimation {
+  animation: redButtonOn 1.5s;
+}
+
+@keyframes yellowButtonOn {
+  0% {
+    background-color: var(--yellow-color);
+  }
+  25% {
+    background-color: var(--darkyellow-color);
+  }
+  50% {
+    background-color: var(--yellow-color);
+  }
+  75% {
+    background-color: var(--darkyellow-color);
+  }
+  85% {
+    background-color: var(--yellow-color);
+  }
+  100% {
+    background-color: var(--darkyellow-color);
+  }
+}
+
+.yellowButtonAnimation {
+  animation: yellowButtonOn 1.5s;
+}
+
+@keyframes greenButtonOn {
+  0% {
+    background-color: var(--green-color);
+  }
+  25% {
+    background-color: var(--darkgreen-color);
+  }
+  50% {
+    background-color: var(--green-color);
+  }
+  75% {
+    background-color: var(--darkgreen-color);
+  }
+  85% {
+    background-color: var(--green-color);
+  }
+  100% {
+    background-color: var(--darkgreen-color);
+  }
+}
+
+.greenButtonAnimation {
+  animation: greenButtonOn 1.5s;
 }
 
 .colored-buttons-container .white-container {
@@ -278,7 +410,7 @@ body {
 }
 
 .coloredBtn.green-container {
-  background-color: #2bff00;
+  background-color: var(--green-color);
   left: 40%;
 }
 
@@ -480,6 +612,42 @@ body {
 
   position: relative;
   transform: translateX(-1%);
+}
+
+.layer3 .powerButtonContainer {
+  background-color: var(--base-background-color);
+  border-radius: 50%;
+
+  z-index: 1000;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  height: 70px;
+  width: 70px;
+
+  cursor: pointer;
+  user-select: none;
+  pointer-events: all !important;
+}
+
+.layer3 .powerButtonContainer:hover {
+  opacity: .8 !important;
+}
+
+.layer3 .powerButtonContainer:active {
+  background-color: var(--pokedex-shade1);
+  transform: scale(.95);
+}
+
+.layer3 .powerButtonContainer img#powerBtn {
+  border-radius: 50%;
+
+  height: 85%;
+  position: absolute;
+  top: 7%;
+  left: 8%;
+  padding: 5px;
+  pointer-events: all !important;
 }
 
 .display-container {
@@ -691,7 +859,7 @@ form#search_show_PokemonInfo .pokeResults-display {
   font-size: clamp(8px, 5vw, 0.8rem);
 }
 
-.pokeResults-display span {
+.pokeResults-display h2 > span:nth-child(2) {
   display: block;
   color: #fff;
   text-shadow: 0 0 8px #000;
@@ -700,13 +868,8 @@ form#search_show_PokemonInfo .pokeResults-display {
 @media (max-width: 600px) {
   .base {
     width: 90%;
-    height: 100vh;
-  }
-
-  /* .base {
-    width: 90%;
     height: 95vh;
-  } */
+  }
 
   .base > .black-bars .black-bar:nth-child(1) {
     height: 90%;
@@ -782,5 +945,9 @@ form#search_show_PokemonInfo .pokeResults-display {
 
   .pokeResults-display * {
     font-size: 11px;
+  }
+
+  .pokeResults-display h2:first-child {
+    width: 70px !important;
   }
 }
